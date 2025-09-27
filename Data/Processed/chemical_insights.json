@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-26T22:56:57.176027",
+  "primary_findings": {
+    "strongest_predictor": "f7_nci_mean (Average NCI strength)",
+    "strongest_correlation": -0.531,
+    "mechanism": "Electron density at bond critical points",
+    "chemical_basis": "Direct measure of intermolecular electronic overlap"
+  },
+  "secondary_findings": {
+    "covalent_enhancement": "f3_max_inter_wbo shows non-linear behavior",
+    "interaction_diversity": "f8_nci_std_dev supports diverse stability hypothesis",
+    "volume_effects": "f6_nci_attractive_points measures interaction extent"
+  },
+  "unexpected_findings": {
+    "distance_paradox": "Larger distances correlate with higher SNCI",
+    "dipole_paradox": "Higher dipole moments correlate with lower SNCI",
+    "polarizability_paradox": "Higher polarizability correlates with lower SNCI"
+  },
+  "chemical_insights": [
+    "Average NCI strength is the dominant stability factor",
+    "Covalent character non-linearly enhances binding",
+    "Interaction diversity enhances overall stability",
+    "Total interaction volume matters more than closest distance",
+    "SNCI excels for complex, multi-site interactions",
+    "KNF provides comprehensive interaction characterization"
+  ],
+  "implications": {
+    "for_methodology": "KNF captures complementary chemical phenomena",
+    "for_applications": "Best suited for complex multi-site interactions",
+    "for_understanding": "Confirms hybrid non-covalent/covalent bonding importance"
+  }
+}
