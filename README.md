@@ -74,42 +74,6 @@ kulkarni-heterogeneity-principle/
 ├── Scripts/
 ```
 
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-* Python 3.8+
-* NumPy, Pandas, Scikit-learn
-* Matplotlib, Seaborn (for visualization)
-
-### Running the Analysis
-
-```bash
-git clone https://github.com/prasannakulkarni/kulkarni-heterogeneity-principle.git
-cd kulkarni-heterogeneity-principle
-python analysis/scripts/Perp_v1.py
-python analysis/scripts/generate_figures.py
-```
-
-### Reproducing Key Results
-
-```python
-import pandas as pd
-from analysis.scripts.Perp_v1 import KulkarniAnalysis
-
-# Load dataset
-data = pd.read_csv('data/raw/KNF_v1.0.csv')
-
-# Run heterogeneity analysis
-analyzer = KulkarniAnalysis(data)
-results = analyzer.discover_heterogeneity_principle()
-
-print(f"Predictive accuracy: R² = {results['r_squared']:.3f}")
-```
-
----
 
 ## 🏆 Scientific Impact
 
@@ -175,9 +139,9 @@ All data and code are provided under the MIT License:
 
 ## 📞 Contact
 
-* **Email:** [[your-email@university.edu](mailto:your-email@university.edu)]
-* **GitHub:** [@prasannakulkarni](https://github.com/prasannakulkarni)
-* **Institution:** [Your University]
+* **Email:** [[your-email@university.edu](prasannakulkarni163@gmail.com)]
+* **GitHub:** [@prasannakulkarni](https://github.com/Prasanna163)
+* **Institution:** Institute of Chemical Technology
 
 ---
 
