@@ -69,23 +69,9 @@ kulkarni-heterogeneity-principle/
 │   │   ├── KNF_v1.0.csv
 │   │   ├── FINAL_SCORES_SNCI_UPDATED.csv
 │   │   └── pan_chemical_raw_nci.csv
-│   ├── processed/           # Analysis-ready data
-│   │   ├── enhanced_dataset.csv
-│   │   ├── analyzed_data.csv
-│   │   └── correlation_results.json
-│   └── experimental/        # Experimental validation
-│       └── des_extracted.csv
-├── analysis/
-│   ├── scripts/             # Python analysis code
-│   │   ├── Perp_v1.py
-│   │   └── complete_analysis.json
-│   └── results/             # Generated outputs
-│       ├── correlation_matrix.jpg
-│       ├── validation_summary.jpg
-│       └── system_specific_analysis.jpg
-├── figures/                 # Publication-quality figures
-├── manuscript/              # Manuscript materials
-└── docs/                    # Documentation and methodology
+│   ├── processed/           
+│   │   └── correlation_results.json      
+├── Scripts/
 ```
 
 ---
