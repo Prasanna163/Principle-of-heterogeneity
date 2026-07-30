@@ -1,165 +1,95 @@
-# 🔬 The Kulkarni Heterogeneity Principle
+# Interaction Heterogeneity and Supramolecular Stability
 
-## Interaction Diversity as the Key Driver of Supramolecular Stability
+Computational analysis of how interaction heterogeneity relates to the stability of non-covalent molecular complexes.
 
-[![DOI](https://img.shields.io/badge/DOI-Submitted%20to%20JACS-blue.svg)](https://github.com/prasannakulkarni/kulkarni-heterogeneity-principle)
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
-[![Status](https://img.shields.io/badge/Status-Under%20Review-orange)](https://github.com/prasannakulkarni/kulkarni-heterogeneity-principle)
 
-> **🚀 Paradigm-Shifting Discovery:** This repository contains the complete evidence for the **Kulkarni Heterogeneity Principle** — the first quantitative proof that **interaction diversity, not strength, governs supramolecular stability**.
+## Research Question
 
----
+Many molecular-design strategies focus on maximizing the strength of one dominant interaction. This project tests a broader hypothesis: stability may also depend on the distribution and heterogeneity of interactions across a complex.
 
-## ⚡ Key Insight
+The analysis uses the Kulkarni-NCI Fingerprint (KNF) to separate average interaction character from variation within the non-covalent interaction field.
 
-**Traditional Approach:** *"Maximize the strength of individual interactions"*
-**Kulkarni Principle:** *"Maximize interaction diversity instead"*
+## Dataset and Model
 
-### 🎯 Main Finding
+The study analyzes 2,649 molecular complexes. The main regression model includes interaction-strength, heterogeneity, electronic, and geometric terms.
 
-Supramolecular stability is **more strongly correlated with heterogeneity of interactions** than with their average strength:
+| Quantity | Reported value |
+| --- | ---: |
+| Molecular complexes | 2,649 |
+| Model R2 | 0.515 |
+| Mean interaction term, f7 | -0.0157 |
+| Residual heterogeneity term | -0.0053 |
+| Quadratic heterogeneity term | +0.00235 |
+| Wiberg bond-order term, f3 | +0.0185 |
 
-[
-\text{Stability} \sim f(\text{Heterogeneity}^2) \gg f(\text{Strength})
-]
+The positive quadratic term indicates a nonlinear relationship between heterogeneity and the target property within this dataset. It does not by itself establish a universal design law.
 
-**Practical Implication:** Molecular systems with **varied weak interactions** are more stable than those with **uniform strong interactions**.
+## Interpretation
 
----
+The current evidence supports three cautious conclusions:
 
-## 📊 Highlights of the Study
+1. Interaction heterogeneity contains information that is not fully captured by average interaction strength.
+2. Its relationship with stability appears nonlinear in the analyzed dataset.
+3. Heterogeneity may be useful as a design variable when evaluated together with geometry, electronic structure, and interaction strength.
 
-| Metric                        | Value      | Significance                         |
-| ----------------------------- | ---------- | ------------------------------------ |
-| Molecular Complexes Analyzed  | 2,649      | Largest dataset of its kind          |
-| Statistical Significance      | p < 0.001  | Robust and reproducible              |
-| Predictive Accuracy           | R² = 0.515 | Explains 51.5% of stability variance |
-| Maximum Stability Enhancement | +295%      | Demonstrates potential for design    |
-| Paradigm Shift                | 50+ years  | Challenges established dogma         |
+These findings should be tested on additional molecular families before broad generalization.
 
----
+## Repository Structure
 
-## 🧪 Implications for Molecular Design
-
-### **Before (Traditional Approach)**
-
-* Focus on strongest interactions
-* Maximize bond strength uniformly
-* “Bigger hammer” mentality
-* Limited design strategies
-
-### **After (Kulkarni Principle)**
-
-* Optimize **interaction diversity**
-* Balance multiple interaction types
-* Use a **smart ensemble approach**
-* Explore **infinite design possibilities**
-
----
-
-## 📁 Repository Structure
-
-```
-kulkarni-heterogeneity-principle/
+```text
+.
 ├── README.md
 ├── LICENSE
 ├── data/
-│   ├── raw/                 # Original molecular data
-│   │   ├── KNF_v1.0.csv
-│   │   ├── FINAL_SCORES_SNCI_UPDATED.csv
-│   │   └── pan_chemical_raw_nci.csv
-│   ├── processed/           
-│   │   └── correlation_results.json      
-├── Scripts/
+│   ├── raw/
+│   └── processed/
+└── Scripts/
 ```
 
+The repository contains the data and analysis scripts used to evaluate the proposed relationship.
 
-## 🏆 Scientific Impact
+## Reproduction
 
-### Applications
+1. Create a Python environment.
+2. Install the required scientific Python packages.
+3. Confirm the input paths used by the scripts.
+4. Run data preparation before statistical analysis.
+5. Compare generated coefficients, diagnostics, and figures with the reported outputs.
 
-* **Drug Design:** Optimize drug-target interactions via diversity
-* **Materials Science:** Engineer stronger, more resilient materials
-* **Catalysis:** Design more efficient catalysts with diverse active sites
-* **Supramolecular Chemistry:** Establishes new design rules
+Common dependencies include:
 
-### Recognition
-
-* **Submitted to:** Journal of the American Chemical Society (JACS)
-* **Submission Date:** September 2025
-* **Research Level:** Undergraduate Discovery
-
----
-
-## 📖 Citation
-
-If you use this work, please cite:
-
-```bibtex
-@article{kulkarni2025heterogeneity,
-  title={The Kulkarni Heterogeneity Principle: Interaction Diversity as the Key Driver of Supramolecular Stability},
-  author={Kulkarni, Prasanna P.},
-  journal={Submitted to Journal of the American Chemical Society},
-  year={2025},
-  note={Available at: https://github.com/prasannakulkarni/kulkarni-heterogeneity-principle}
-}
+```bash
+pip install numpy pandas scipy scikit-learn matplotlib statsmodels
 ```
 
----
+Exact requirements may vary between scripts.
 
-## 🤝 Contributing
+## Scope and Limitations
 
-* Independent validation of the principle using other molecular systems
-* Novel applications of interaction diversity
-* Bug reports or improvements in analysis code
-* Extensions to related chemical phenomena
+- The analysis is observational and dataset-dependent.
+- Regression coefficients depend on feature scaling and model specification.
+- Correlation does not prove a direct causal mechanism.
+- The current dataset is dominated by specific classes of non-covalent complexes.
+- Independent validation on additional benchmarks is required.
 
----
+## Related Work
 
-## 📊 Data Availability
+- [KNF Predictor](https://github.com/Prasanna163/KNF-Predictor)
+- [JCIM workflow code](https://github.com/Prasanna163/Supramolecular-Stability-JCIM-Code)
+- [Geonit](https://github.com/Prasanna163/Geoinit)
 
-All data and code are provided under the MIT License:
+## Citation Status
 
-* ✅ Complete datasets included
-* ✅ Raw experimental data provided
-* ✅ Analysis code fully documented
-* ✅ Step-by-step reproduction instructions
+This repository documents an ongoing research direction. Use the final journal citation when a corresponding peer-reviewed paper becomes available. Until then, cite the repository with the commit hash used in the analysis.
 
-**Every claim in this work is independently verifiable using the repository.**
+## License
 
----
+The code in this repository is available under the MIT License. Dataset reuse may be subject to the terms of the original data sources.
 
-## 🌟 About the Author
+## Contact
 
-**Prasanna P. Kulkarni** — Third-year Undergraduate Student
-*Discovering fundamental principles in supramolecular chemistry through computational research.*
-
----
-
-## 📞 Contact
-
-* **Email:** [[your-email@university.edu](prasannakulkarni163@gmail.com)]
-* **GitHub:** [@prasannakulkarni](https://github.com/Prasanna163)
-* **Institution:** Institute of Chemical Technology
-
----
-
-## 🌐 Related Work
-
-* **ChemProp:** ML-based chemical property prediction
-* **RDKit:** Cheminformatics toolkit
-* **Deep Eutectic Solvents:** Validation system for the principle
-
----
-
-## ⚖️ License
-
-This project is licensed under the MIT License — free for academic and commercial use with attribution.
-
----
-
-<div align="center">
-🔬 Changing Chemistry, One Interaction at a Time 🔬  
-Made with ❤️ for Open Science
-</div>
+Prasanna P. Kulkarni  
+Institute of Chemical Technology, Mumbai, Marathwada Campus  
+Email: prasannakulkarni163@gmail.com
